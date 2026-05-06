@@ -1,0 +1,149 @@
+:root {
+  --bg-1: #f4f7fb;
+  --bg-2: #dde8f7;
+  --surface: #ffffff;
+  --text: #10243e;
+  --muted: #4b6482;
+  --accent: #1161d6;
+  --accent-hover: #0d4ead;
+  --border: #d8e1ee;
+  --ok: #1d7a46;
+  --error: #b33434;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 10% 10%, var(--bg-2), var(--bg-1) 55%);
+}
+
+.page {
+  width: min(960px, 92vw);
+  margin: 2rem auto;
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 10px 24px rgba(20, 39, 64, 0.08);
+}
+
+.hero h1 {
+  margin: 0 0 0.4rem;
+}
+
+.hero p {
+  margin: 0 0 1rem;
+  color: var(--muted);
+}
+
+.search-form label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+}
+
+.search-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.search-row input {
+  flex: 1;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 1rem;
+  padding: 0.7rem 0.85rem;
+}
+
+.search-row button {
+  border: none;
+  border-radius: 10px;
+  background: var(--accent);
+  color: white;
+  padding: 0.7rem 1rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.search-row button:hover {
+  background: var(--accent-hover);
+}
+
+.status {
+  min-height: 1.25rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.status.error {
+  color: var(--error);
+  font-weight: 600;
+}
+
+.status.ok {
+  color: var(--ok);
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.65rem;
+}
+
+.metric {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.75rem;
+  background: #fbfdff;
+}
+
+.metric-label {
+  display: block;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.metric-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.forecast-list {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.forecast-item {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.7rem;
+  background: #fbfdff;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .search-row {
+    flex-direction: column;
+  }
+
+  .forecast-item {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, render_template, request
 
 from app.config import Config
 from app.repositories.redis import RedisRepository
@@ -10,6 +10,10 @@ def create_app():
 
     @app.get('/')
     def index():
+        return render_template('index.html')
+
+    @app.get('/weather')
+    def weather():
         city = request.args.get('city')
         if not city:
             return jsonify({'error': 'city query parameter is required'}), 400
