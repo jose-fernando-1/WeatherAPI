@@ -1,1 +1,1 @@
-https://github.com/jose-fernando-1/WeatherAPI.git
+https://github.com/jose-fernando-1/WeatherAPI
